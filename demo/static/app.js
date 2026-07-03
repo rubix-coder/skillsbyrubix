@@ -177,3 +177,74 @@ async function loadTools() {
     out.innerHTML = errorBanner(err);
   }
 }
+
+const chatLog = document.getElementById("chat-log");
+
+function appendChatMessage(role, text) {
+  const div = document.createElement("div");
+  div.className = `chat-msg ${role}`;
+  div.textContent = text;
+  chatLog.appendChild(div);
+  chatLog.scrollTop = chatLog.scrollHeight;
+  return div;
+}
+
+function appendToolTrace(toolCalls) {
+  if (!toolCalls || !toolCalls.length) return;
+  const details = document.createElement("details");
+  details.className = "tool-trace";
+  const summary = document.createElement("summary");
+  summary.textContent = `Claude called ${toolCalls.length} MCP tool${toolCalls.length > 1 ? "s" : ""}: ${toolCalls.map((t) => t.name).join(", ")}`;
+  details.appendChild(summary);
+  toolCalls.forEach((t) => {
+    const pre = document.createElement("pre");
+    pre.textContent = `${t.name}(${JSON.stringify(t.input)})\n→ ${t.result}`;
+    details.appendChild(pre);
+  });
+  chatLog.appendChild(details);
+  chatLog.scrollTop = chatLog.scrollHeight;
+}
+
+document.getElementById("chat-form").addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const input = document.getElementById("chat-input");
+  const message = input.value.trim();
+  if (!message) return;
+  input.value = "";
+  appendChatMessage("user", message);
+  const pending = appendChatMessage("assistant", "…thinking…");
+  try {
+    const result = await postJSON("/api/chat", { message });
+    pending.remove();
+    appendToolTrace(result.tool_calls);
+    appendChatMessage("assistant", result.reply || "(no reply)");
+  } catch (err) {
+    pending.remove();
+    const div = document.createElement("div");
+    div.className = "chat-msg system-note";
+    div.textContent = `⚠ ${err.message}`;
+    chatLog.appendChild(div);
+  }
+});
+
+document.getElementById("chat-reset").addEventListener("click", async () => {
+  await postJSON("/api/chat/reset", {});
+  chatLog.innerHTML = "";
+  appendChatMessage("assistant", "Conversation reset. What's going on?");
+});
+
+(async function checkChatEnabled() {
+  try {
+    const health = await getJSON("/api/health");
+    if (!health.chat_enabled) {
+      const div = document.createElement("div");
+      div.className = "chat-msg system-note";
+      div.textContent =
+        "Chat is disabled: no ANTHROPIC_API_KEY / ANTHROPIC_AUTH_TOKEN found. Set one and restart the demo server to enable it. The other tabs still work — they call the MCP tools directly.";
+      chatLog.appendChild(div);
+      document.querySelector('#chat-form button[type="submit"]').disabled = true;
+    }
+  } catch {
+    // health check itself failed; the per-message error banner will explain
+  }
+})();

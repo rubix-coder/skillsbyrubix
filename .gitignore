@@ -1,5 +1,7 @@
 .venv/
 demo/.venv/
+.env
+demo/.env
 __pycache__/
 *.pyc
 *.egg-info/

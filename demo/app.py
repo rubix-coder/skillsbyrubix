@@ -5,11 +5,15 @@ this app is an MCP client, not a reimplementation of the server's logic.
 """
 
 import logging
+import os
 
+from dotenv import load_dotenv
 from flask import Flask, jsonify, render_template, request
 from werkzeug.exceptions import HTTPException
 
-from mcp_client import McpClientError, call_tool_resilient, get_client
+load_dotenv(os.path.join(os.path.dirname(__file__), "..", ".env"))
+
+from mcp_client import McpClientError, call_tool_resilient, get_client  # noqa: E402
 
 app = Flask(__name__)
 log = logging.getLogger(__name__)
@@ -28,10 +32,27 @@ def favicon():
 @app.route("/api/health")
 def api_health():
     try:
-        tools = get_client().list_tools()
-        return jsonify({"status": "ok", "tool_count": len(tools)})
+        client = get_client()
+        tools = client.list_tools()
+        return jsonify({"status": "ok", "tool_count": len(tools), "chat_enabled": client.has_chat()})
     except McpClientError as exc:
         return jsonify({"status": "error", "message": str(exc)}), 503
+
+
+@app.route("/api/chat", methods=["POST"])
+def api_chat():
+    body = request.get_json(force=True)
+    message = (body.get("message") or "").strip()
+    if not message:
+        return jsonify({"status": "error", "message": "Message cannot be empty."}), 400
+    result = get_client().chat(message)
+    return jsonify(result)
+
+
+@app.route("/api/chat/reset", methods=["POST"])
+def api_chat_reset():
+    get_client().reset_chat()
+    return jsonify({"status": "ok"})
 
 
 @app.route("/api/tools")

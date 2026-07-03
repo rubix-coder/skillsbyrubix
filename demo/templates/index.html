@@ -17,7 +17,8 @@
   </div>
 
   <nav class="tabs">
-    <button class="tab active" data-tab="remedy">Symptom Check</button>
+    <button class="tab active" data-tab="chat">Chat with Claude</button>
+    <button class="tab" data-tab="remedy">Symptom Check</button>
     <button class="tab" data-tab="recipes">Recipe Finder</button>
     <button class="tab" data-tab="routine">Daily Routine</button>
     <button class="tab" data-tab="pranayama">Pranayama</button>
@@ -25,7 +26,18 @@
   </nav>
 
   <main>
-    <section id="panel-remedy" class="panel active">
+    <section id="panel-chat" class="panel active">
+      <h2>Chat with Claude</h2>
+      <p class="hint">Claude (claude-opus-4-8) decides which MCP tools to call based on what you say — try "I have a runny nose", "I'm pregnant and feeling nauseous", or "build me a kapha routine, I have hypertension".</p>
+      <div id="chat-log" class="chat-log"></div>
+      <form id="chat-form" class="chat-form">
+        <input type="text" name="message" id="chat-input" placeholder="Tell Claude what's going on…" autocomplete="off" required />
+        <button type="submit">Send</button>
+        <button type="button" id="chat-reset" class="chat-reset">Reset</button>
+      </form>
+    </section>
+
+    <section id="panel-remedy" class="panel">
       <h2>Suggest a remedy</h2>
       <p class="hint">Try: "chest pain" (emergency referral), "mild nausea" + context "pregnant" (filtered), "cough" + context "8-month-old" (suppressed), or "constipation".</p>
       <form id="remedy-form">

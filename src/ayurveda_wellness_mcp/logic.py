@@ -12,9 +12,20 @@ def safety_check(symptoms: str) -> dict:
     return triage(symptoms)
 
 
+def _expand_synonyms(symptoms_lower: str) -> str:
+    """Append canonical indication words for any lay-language phrase found,
+    so free-text symptoms (e.g. 'runny nose') match indication tags (e.g.
+    'cold') without requiring the user to guess our vocabulary."""
+    synonyms = load("symptom_synonyms")
+    expansions = [canonical for phrase, canon in synonyms.items() if phrase in symptoms_lower for canonical in canon]
+    if not expansions:
+        return symptoms_lower
+    return symptoms_lower + " " + " ".join(expansions)
+
+
 def _matching_remedies(symptoms: str):
     remedies = load("remedies")
-    symptoms_lower = (symptoms or "").lower()
+    symptoms_lower = _expand_synonyms((symptoms or "").lower())
     return [
         {"id": rid, **r}
         for rid, r in remedies.items()

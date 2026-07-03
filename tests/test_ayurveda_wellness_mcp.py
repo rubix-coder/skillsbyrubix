@@ -28,6 +28,13 @@ def test_constipation_is_clear_with_triphala():
     assert "triphala" in ids
 
 
+def test_lay_language_runny_nose_matches_cold_remedies():
+    result = logic.suggest_remedy("runny nose")
+    assert result["status"] == "clear"
+    ids = {r["id"] for r in result["remedies"]}
+    assert ids == {"ginger_tea", "tulsi_tea"}
+
+
 def test_infant_cough_suppresses_remedies_entirely():
     result = logic.suggest_remedy("cough", context="8-month-old baby")
     assert result["status"] == "caution"

@@ -1,0 +1,46 @@
+{
+  "nadi_shodhana": {
+    "name": "Nadi Shodhana (Alternate Nostril Breathing)",
+    "effect": ["calming", "balancing"],
+    "duration_min": 5,
+    "steps": "Sit comfortably. Close right nostril, inhale left; close left, exhale right; inhale right, close right, exhale left. Repeat gently for 5 minutes.",
+    "cautions": [],
+    "contraindications": []
+  },
+  "kapalabhati": {
+    "name": "Kapalabhati (Skull-Shining Breath)",
+    "effect": ["energizing", "detox"],
+    "duration_min": 3,
+    "steps": "Sit tall. Sharp, forceful exhales through the nose with passive inhales, about 1-2 per second, in short rounds with rest between.",
+    "cautions": [
+      "Avoid in pregnancy.",
+      "Avoid with hypertension or heart disease.",
+      "Stop if lightheaded."
+    ],
+    "contraindications": ["pregnancy", "chronic_disease", "medications"]
+  },
+  "bhramari": {
+    "name": "Bhramari (Humming Bee Breath)",
+    "effect": ["calming"],
+    "duration_min": 5,
+    "steps": "Close eyes and ears gently, inhale, then exhale slowly while humming like a bee. Repeat 8-10 rounds.",
+    "cautions": [],
+    "contraindications": []
+  },
+  "sheetali": {
+    "name": "Sheetali (Cooling Breath)",
+    "effect": ["calming", "cooling"],
+    "duration_min": 5,
+    "steps": "Curl the tongue lengthwise (or purse lips if unable), inhale slowly through the mouth, exhale through the nose. Repeat 8-10 rounds.",
+    "cautions": ["Avoid in very cold weather or with respiratory congestion."],
+    "contraindications": []
+  },
+  "ujjayi": {
+    "name": "Ujjayi (Ocean Breath)",
+    "effect": ["balancing", "energizing"],
+    "duration_min": 8,
+    "steps": "Breathe through the nose with a slight throat constriction, creating a soft ocean-like sound on both inhale and exhale.",
+    "cautions": [],
+    "contraindications": []
+  }
+}

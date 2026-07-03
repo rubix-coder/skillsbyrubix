@@ -1,0 +1,64 @@
+{
+  "dinacharya": {
+    "vata": {
+      "wake_time": "6:00 AM (before sunrise)",
+      "steps": [
+        "Warm sesame oil self-massage (abhyanga) before showering",
+        "Gentle warm-water rinse, avoid cold plunges",
+        "Grounding yoga or gentle stretching, 10-15 minutes",
+        "Warm, moist breakfast (e.g. spiced oatmeal) by 8:00 AM",
+        "Regular meal times to steady vata's variability",
+        "Warm, nourishing dinner by 7:00 PM",
+        "Wind-down with warm milk or herbal tea and consistent sleep by 10:00 PM"
+      ]
+    },
+    "pitta": {
+      "wake_time": "6:00 AM",
+      "steps": [
+        "Cool or lukewarm shower, avoid very hot water",
+        "Moderate-intensity yoga or a walk in cooler morning air, 15-20 minutes",
+        "Substantial breakfast by 7:30 AM to manage strong pitta digestion",
+        "Largest meal at midday when digestive fire peaks",
+        "Cooling foods and adequate hydration through the afternoon",
+        "Light dinner by 7:00 PM",
+        "Wind down away from screens/heat, sleep by 10:30 PM"
+      ]
+    },
+    "kapha": {
+      "wake_time": "5:30 AM (before kapha's natural sluggishness sets in)",
+      "steps": [
+        "Brisk dry-brushing or vigorous self-massage to stimulate circulation",
+        "Warm or cool energizing shower",
+        "Vigorous exercise or sun salutations, 20-30 minutes",
+        "Light breakfast, or skip if not hungry, favoring warm spiced tea",
+        "Largest meal at midday, light and warm dinner by 6:30-7:00 PM",
+        "Stay active through the afternoon to counter sluggishness",
+        "Sleep by 10:00 PM, avoid daytime napping"
+      ]
+    }
+  },
+  "ritucharya": {
+    "winter": "Favor warm, unctuous, grounding foods; regular oil massage; moderate but sustained exercise.",
+    "summer": "Favor cooling, hydrating foods; avoid peak-heat exertion; lighter oils.",
+    "monsoon": "Favor warm, freshly cooked, easily digestible food; support digestion (agni) which weakens in humidity.",
+    "spring": "Favor light, warming, pungent foods to counter kapha accumulation from winter; increase activity.",
+    "autumn": "Favor grounding, moist, warm foods as vata increases with dryness and wind."
+  },
+  "exercise": {
+    "vata": [
+      {"name": "Gentle Hatha yoga flow", "duration_min": 15, "goals": ["flexibility", "calm", "general"]},
+      {"name": "Slow walk in nature", "duration_min": 20, "goals": ["calm", "general"]},
+      {"name": "Restorative yoga with props", "duration_min": 10, "goals": ["calm"]}
+    ],
+    "pitta": [
+      {"name": "Moderate-pace swimming", "duration_min": 20, "goals": ["cooling", "general", "cardio"]},
+      {"name": "Moon salutations (Chandra Namaskar)", "duration_min": 15, "goals": ["cooling", "flexibility"]},
+      {"name": "Evening walk", "duration_min": 20, "goals": ["general", "cooling"]}
+    ],
+    "kapha": [
+      {"name": "Sun salutations (Surya Namaskar), brisk pace", "duration_min": 15, "goals": ["energy", "cardio", "general"]},
+      {"name": "Brisk walk or jog", "duration_min": 25, "goals": ["cardio", "energy", "weight"]},
+      {"name": "Dynamic strength circuit", "duration_min": 20, "goals": ["strength", "weight", "energy"]}
+    ]
+  }
+}

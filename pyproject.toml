@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ayurveda-wellness-mcp"
+version = "1.1.0"
+description = "MCP server exposing safety-gated Ayurvedic wellness tools (remedies, recipes, routines, pranayama)."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "mcp>=1.0.0",
+]
+
+[project.scripts]
+ayurveda-wellness-mcp = "ayurveda_wellness_mcp.server:main"
+
+[project.optional-dependencies]
+test = ["pytest"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+ayurveda_wellness_mcp = ["data/*.json"]

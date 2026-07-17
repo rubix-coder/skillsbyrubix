@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ayurveda Wellness — MCP Demo</title>
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <header class="hero">
+    <h1>Ayurveda Wellness</h1>
+    <p class="sub">A live demo client for the <code>ayurveda-wellness-mcp</code> server — every action below is a real MCP tool call over stdio.</p>
+  </header>
+
+  <div class="disclaimer" id="disclaimer">
+    Educational only, not medical advice. Consult a qualified practitioner or physician, especially if pregnant, nursing, caring for a child, on medication, or managing a chronic condition.
+  </div>
+
+  <nav class="tabs">
+    <button class="tab active" data-tab="chat">Chat with Claude</button>
+    <button class="tab" data-tab="remedy">Symptom Check</button>
+    <button class="tab" data-tab="recipes">Recipe Finder</button>
+    <button class="tab" data-tab="routine">Daily Routine</button>
+    <button class="tab" data-tab="pranayama">Pranayama</button>
+    <button class="tab" data-tab="tools">MCP Tools</button>
+  </nav>
+
+  <main>
+    <section id="panel-chat" class="panel active">
+      <h2>Chat with Claude</h2>
+      <p class="hint">Claude (claude-opus-4-8) decides which MCP tools to call based on what you say — try "I have a runny nose", "I'm pregnant and feeling nauseous", or "build me a kapha routine, I have hypertension".</p>
+      <div id="chat-log" class="chat-log"></div>
+      <form id="chat-form" class="chat-form">
+        <input type="text" name="message" id="chat-input" placeholder="Tell Claude what's going on…" autocomplete="off" required />
+        <button type="submit">Send</button>
+        <button type="button" id="chat-reset" class="chat-reset">Reset</button>
+      </form>
+    </section>
+
+    <section id="panel-remedy" class="panel">
+      <h2>Suggest a remedy</h2>
+      <p class="hint">Try: "chest pain" (emergency referral), "mild nausea" + context "pregnant" (filtered), "cough" + context "8-month-old" (suppressed), or "constipation".</p>
+      <form id="remedy-form">
+        <label>Symptoms
+          <input type="text" name="symptoms" placeholder="e.g. mild nausea" required />
+        </label>
+        <label>Context <span class="optional">(age, pregnancy, medications, conditions…)</span>
+          <input type="text" name="context" placeholder="e.g. pregnant" />
+        </label>
+        <button type="submit">Check</button>
+      </form>
+      <div id="remedy-result" class="result"></div>
+    </section>
+
+    <section id="panel-recipes" class="panel">
+      <h2>Find a recipe</h2>
+      <form id="recipe-form">
+        <label>Dosha
+          <select name="dosha">
+            <option value="">Any</option>
+            <option value="vata">Vata</option>
+            <option value="pitta">Pitta</option>
+            <option value="kapha">Kapha</option>
+          </select>
+        </label>
+        <label>Season
+          <select name="season">
+            <option value="">Any</option>
+            <option value="winter">Winter</option>
+            <option value="summer">Summer</option>
+            <option value="monsoon">Monsoon</option>
+            <option value="spring">Spring</option>
+            <option value="autumn">Autumn</option>
+          </select>
+        </label>
+        <label>Query <span class="optional">(optional)</span>
+          <input type="text" name="query" placeholder="e.g. ginger" />
+        </label>
+        <button type="submit">Search</button>
+      </form>
+      <div id="recipe-result" class="result"></div>
+    </section>
+
+    <section id="panel-routine" class="panel">
+      <h2>Build a daily routine (dinacharya)</h2>
+      <form id="routine-form">
+        <label>Dosha
+          <select name="dosha">
+            <option value="vata">Vata</option>
+            <option value="pitta">Pitta</option>
+            <option value="kapha">Kapha</option>
+          </select>
+        </label>
+        <label>Season
+          <select name="season">
+            <option value="all">Any</option>
+            <option value="winter">Winter</option>
+            <option value="summer">Summer</option>
+            <option value="monsoon">Monsoon</option>
+            <option value="spring">Spring</option>
+            <option value="autumn">Autumn</option>
+          </select>
+        </label>
+        <label>Level
+          <select name="level">
+            <option value="beginner">Beginner</option>
+            <option value="advanced">Advanced</option>
+          </select>
+        </label>
+        <label>Constraints <span class="optional">(try "hypertension, on blood pressure medication" with Kapha)</span>
+          <input type="text" name="constraints" placeholder="e.g. hypertension" />
+        </label>
+        <button type="submit">Build Plan</button>
+      </form>
+      <div id="routine-result" class="result"></div>
+    </section>
+
+    <section id="panel-pranayama" class="panel">
+      <h2>Pranayama finder</h2>
+      <form id="pranayama-form">
+        <label>Desired effect
+          <select name="effect">
+            <option value="">Any</option>
+            <option value="calming">Calming</option>
+            <option value="energizing">Energizing</option>
+            <option value="balancing">Balancing</option>
+            <option value="detox">Detox</option>
+            <option value="cooling">Cooling</option>
+          </select>
+        </label>
+        <button type="submit">Find</button>
+      </form>
+      <div id="pranayama-result" class="result"></div>
+    </section>
+
+    <section id="panel-tools" class="panel">
+      <h2>Live MCP tool registry</h2>
+      <p class="hint">Fetched from the running server via <code>list_tools()</code> — proof this is a real MCP connection, not hardcoded UI.</p>
+      <div id="tools-result" class="result"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p>ayurveda-wellness-mcp v1.1.0 · Flask demo client over MCP stdio</p>
+  </footer>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>

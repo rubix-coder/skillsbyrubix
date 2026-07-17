@@ -1,0 +1,34 @@
+{
+  "moong_dal_khichdi": {
+    "name": "Moong Dal Khichdi",
+    "dosha": ["tridoshic"],
+    "season": ["all"],
+    "ingredients": ["split yellow moong dal", "basmati rice", "ghee", "cumin seeds", "turmeric", "fresh ginger", "coriander leaves"],
+    "method": "Rinse dal and rice. Saute cumin and ginger in ghee, add turmeric, dal, rice and water. Simmer 20-25 minutes until soft. Garnish with coriander.",
+    "notes": "The classic tridoshic reset meal — light, easy to digest, and balancing for all three doshas."
+  },
+  "warm_spiced_milk": {
+    "name": "Warm Spiced Milk (Vata-Kapha)",
+    "dosha": ["vata", "kapha"],
+    "season": ["winter"],
+    "ingredients": ["milk", "cinnamon", "cardamom", "a pinch of nutmeg", "ghee"],
+    "method": "Warm milk gently with spices for 5 minutes, do not boil hard. Stir in a small spoon of ghee before serving.",
+    "notes": "Grounding for vata, warming for kapha; best in cold weather."
+  },
+  "cooling_cucumber_raita": {
+    "name": "Cooling Cucumber Raita",
+    "dosha": ["pitta"],
+    "season": ["summer"],
+    "ingredients": ["yogurt", "grated cucumber", "fresh mint", "a pinch of cumin powder"],
+    "method": "Mix grated cucumber into whisked yogurt, add chopped mint and cumin. Serve chilled.",
+    "notes": "Cooling and hydrating — ideal for calming pitta heat in summer."
+  },
+  "kapha_light_soup": {
+    "name": "Kapha-Light Vegetable Soup",
+    "dosha": ["kapha"],
+    "season": ["all"],
+    "ingredients": ["mixed light vegetables", "black pepper", "ginger", "turmeric", "a little olive oil"],
+    "method": "Saute ginger and pepper, add chopped vegetables and water, simmer until tender. Season with turmeric.",
+    "notes": "Light, warming, and stimulating — helps counter kapha heaviness and sluggish digestion."
+  }
+}

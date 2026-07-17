@@ -1,0 +1,74 @@
+{
+  "ginger_tea": {
+    "name": "Ginger Tea",
+    "sanskrit_name": "Ardraka Kashaya",
+    "indications": ["nausea", "indigestion", "cold", "cough", "bloating", "motion sickness"],
+    "prep": "Steep 1 tsp fresh grated ginger in a cup of hot water for 10 minutes; add honey or lemon to taste.",
+    "traditional_use": "Classical digestive stimulant (deepana-pachana) used for kapha-vata imbalances and nausea.",
+    "modern_evidence": "Multiple RCTs and a Cochrane review support ginger for nausea, including pregnancy-related nausea at culinary doses, and for mild dyspepsia.",
+    "evidence_grade": "A",
+    "cautions": ["Avoid high supplemental doses alongside anticoagulant medication."],
+    "contraindications": [],
+    "min_age_months": null
+  },
+  "nutmeg_warm_milk": {
+    "name": "Warm Nutmeg Milk",
+    "sanskrit_name": "Jatiphala Kshira",
+    "indications": ["nausea", "insomnia", "restlessness"],
+    "prep": "A pinch of nutmeg powder stirred into a cup of warm milk before bed.",
+    "traditional_use": "Traditional nidra (sleep) and vata-calming preparation.",
+    "modern_evidence": "Limited small studies suggest mild sedative effect; evidence is weak.",
+    "evidence_grade": "C",
+    "cautions": ["Avoid in pregnancy.", "Avoid large doses — nutmeg is toxic in excess."],
+    "contraindications": ["pregnancy"],
+    "min_age_months": null
+  },
+  "triphala": {
+    "name": "Triphala",
+    "sanskrit_name": "Triphala Churna",
+    "indications": ["constipation", "digestive sluggishness", "detox"],
+    "prep": "1/2 tsp Triphala powder dissolved in warm water, taken at bedtime.",
+    "traditional_use": "Classical rasayana formula for digestion and elimination, combining amalaki, bibhitaki, and haritaki.",
+    "modern_evidence": "Small clinical trials show mild laxative and prebiotic effects.",
+    "evidence_grade": "B",
+    "cautions": ["May cause loose stools initially.", "Avoid during acute diarrhea."],
+    "contraindications": [],
+    "min_age_months": null
+  },
+  "honey_lemon": {
+    "name": "Honey Lemon Warm Water",
+    "sanskrit_name": "Madhu Nimbu Jala",
+    "indications": ["cough", "sore throat"],
+    "prep": "1 tsp raw honey with fresh lemon juice stirred into warm (not hot) water.",
+    "traditional_use": "Traditional soothing remedy for kapha-related cough and throat irritation.",
+    "modern_evidence": "A Cochrane review supports honey for reducing acute cough frequency and severity.",
+    "evidence_grade": "A",
+    "cautions": ["Never give to infants under 12 months — risk of infant botulism."],
+    "contraindications": ["infant"],
+    "min_age_months": 12
+  },
+  "tulsi_tea": {
+    "name": "Tulsi (Holy Basil) Tea",
+    "sanskrit_name": "Tulsi Kashaya",
+    "indications": ["cough", "cold", "immunity", "sore throat", "congestion"],
+    "prep": "Steep 5-6 fresh or dried tulsi leaves in hot water for 8-10 minutes.",
+    "traditional_use": "Widely used adaptogen and respiratory support herb in Ayurveda.",
+    "modern_evidence": "Small trials suggest immunomodulatory and mild antitussive effects.",
+    "evidence_grade": "B",
+    "cautions": ["May have mild blood-sugar-lowering effect; monitor if diabetic."],
+    "contraindications": [],
+    "min_age_months": null
+  },
+  "cumin_coriander_fennel_tea": {
+    "name": "CCF Tea (Cumin-Coriander-Fennel)",
+    "sanskrit_name": "Jeeraka Dhanyaka Shatapushpa Kashaya",
+    "indications": ["bloating", "indigestion", "gas", "digestive sluggishness"],
+    "prep": "Steep 1/4 tsp each of cumin, coriander, and fennel seeds in hot water for 10 minutes.",
+    "traditional_use": "Classic tridoshic digestive tea considered gentle enough for daily use.",
+    "modern_evidence": "Component herbs individually show mild carminative effects in small studies.",
+    "evidence_grade": "B",
+    "cautions": ["Generally well tolerated, including in pregnancy at culinary doses."],
+    "contraindications": [],
+    "min_age_months": null
+  }
+}
